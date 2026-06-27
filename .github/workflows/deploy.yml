@@ -42,5 +42,7 @@ jobs:
             --cluster cluster-innovatech-ep3 \
             --services ${{ secrets.ECS_SERVICE }} \
             --region ${{ secrets.AWS_REGION }}
+            --cli-read-timeout 900 \
+            --cli-connect-timeout 900
       - name: Despliegue completado
         run: echo "Servicio ${{ secrets.ECS_SERVICE }} desplegado correctamente"
